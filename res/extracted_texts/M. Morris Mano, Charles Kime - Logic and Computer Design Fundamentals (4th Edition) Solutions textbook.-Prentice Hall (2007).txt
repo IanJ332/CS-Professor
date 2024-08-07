@@ -1,0 +1,1570 @@
+Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 1
+© 2008 Pearson Education, Inc.
+1-3*
+Decimal, Binary, Octal and Hexadecimal Numbers from (16) to (31)
+10 10
+Dec 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
+Bin 1 0000 1 0001 1 0010 1 0011 1 0100 1 0101 1 0110 1 0111 1 1000 1 1001 1 1010 1 1011 1 1100 1 1101 1 1110 1 1111
+Oct 20 21 22 23 24 25 26 27 30 31 32 33 34 35 36 37
+Hex 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F
+1-7*
+(1001101) = 26+23+22+20 = 77
+2
+(1010011.101) = 26+24+21+20+2–1+2–3 = 83.625
+2
+(10101110.1001) = 27+25+23+22+21+2–1+2–4 = 174.5625
+2
+1-9*
+Decimal Binary Octal Hexadecimal
+369.3125 101110001.0101 561.24 171.5
+189.625 10111101.101 275.5 BD.A
+214.625 11010110.101 326.5 D6.A
+62407.625 1111001111000111.101 171707.5 F3C7.A
+1-10*
+a)
+8|7562 2 16612 0.45 × 8 =3.6 => 3
+8|945 1 0.60 × 8 =4.8 => 4
+8|118 6 0.80 × 8 =6.4 => 6
+8|14 6 0.20 × 8 =3.2 => 3 3463
+8|1 1
+0
+(7562.45) = (16612.3463)
+10 8
+b) (1938.257) = (792.41CB)
+10 16
+c) (175.175) = (10101111.001011)
+10 2
+1-11*
+a) (673.6) = (110 111 011.110)
+8 2
+= (1BB.C)
+16
+b) (E7C.B) = (1110 0111 1100.1011)
+16 2
+= (7174.54)
+8
+c) (310.2) = (11 01 00.10)
+4 2
+= (64.4)
+8
+1-16*
+a) (BEE) = (2699)
+r 10
+11×r2+14×r1+14×r0 = 2699
+11×r2+14×r–2685 = 0
+By the quadratic equation: r = 15 or ≈ –16.27
+ANSWER: r = 15
+1Problem Solutions – Chapter 1
+b) (365) = (194)
+r 10
+3×r2+6×r1+5×r0 = 194
+3×r2+6×r–189 = 0
+By the quadratic equation: r = – 9 or 7
+ANSWER: r = 7
+1-18*
+a) (0100 1000 0110 0111) = (4867)
+BCD 10
+= (1001100000011)
+2
+b) (0011 0111 1000.0111 0101) = (378.75)
+BCD 10
+= (101111010.11)
+2
+1-19*
+(694) = (0110 1001 0100)
+10 BCD
+(835) = (1000 0011 0101)
+10 BCD
+1
+0110 1001 0100
++1000 +0011 +0101
+1111 1100 1001
++0110 +0110 +0000
+0001 0101 1 0010 1001
+1-20*
+(a) 101 100
+0111 1000
+Move R 011 1100 0 100 column > 0111
+Subtract 3 -0011
+011 1001 0
+Subtract 3 -0011
+01 1001
+Move R 0 1100 110 100 column > 0111
+Subtract 3 -0011
+0 1001 110
+Move R 0100 1110
+Move R 010 01110
+Move R 01 001110
+Move R 0 1001110 Leftmost 1 in BCD number shifted out: Finished
+(b) 102 101 100
+0011 1001 0111
+Move R 001 1100 1011 1 101 and 100 columns > 0111
+Subtract 3 -0011-0011
+001 1001 1000 1
+Move R 00 1100 1100 01 101 and 100 columns > 0111
+Subtract 3 -0011-0011
+00 1001 1001 01
+Move R 0 0100 1100 101 100 column > 0111
+Subtract 3 -0011
+0 0100 1001
+Move R 0010 0100 1101
+Move R 001 0010 01101
+Move R 00 1001 001101 100 column > 0111
+Subtract 3 -0011
+00 0110 001101
+Move R 0 0011 0001101
+Move R 0001 10001101
+Move R 000 110001101Leftmost 1 in BCD number shifted out: Fin-
+ished
+2Problem Solutions – Chapter 1
+1-25*
+a) (11111111)
+2
+b) (0010 0101 0101)
+BCD
+c) 011 0010 011 0101 011 0101
+ASCII
+d) 0011 0010 1011 0101 1011 0101
+ASCII with Odd Parity
+3Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 2
+© 2008 Pearson Education, Inc.
+2-1.* a) XYZ = X+Y+Z
+Verification of DeMorgan’s Theorem
+X Y Z XYZ XYZ X+Y+Z
+0 0 0 0 1 1
+0 0 1 0 1 1
+0 1 0 0 1 1
+0 1 1 0 1 1
+1 0 0 0 1 1
+1 0 1 0 1 1
+1 1 0 0 1 1
+1 1 1 1 0 0
+b) X+YZ = (X+Y)⋅(X+Z)
+The Second Distributive Law
+X Y Z YZ X+YZ X+Y X+Z (X+Y)(X+Z)
+0 0 0 0 0 0 0 0
+0 0 1 0 0 0 1 0
+0 1 0 0 0 1 0 0
+0 1 1 1 1 1 1 1
+1 0 0 0 1 1 1 1
+1 0 1 0 1 1 1 1
+1 1 0 0 1 1 1 1
+1 1 1 1 1 1 1 1
+c) XY+YZ+XZ = XY+YZ+XZ
+X Y Z XY YZ XZ XY+YZ+XZ XY YZ XZ XY+YZ+XZ
+0 0 0 0 0 0 0 0 0 0 0
+0 0 1 0 1 0 1 0 0 1 1
+0 1 0 1 0 0 1 0 1 0 1
+0 1 1 1 0 0 1 0 0 1 1
+1 0 0 0 0 1 1 1 0 0 1
+1 0 1 0 1 0 1 1 0 0 1
+1 1 0 0 0 1 1 0 1 0 1
+1 1 1 0 0 0 0 0 0 0 0
+2-2.* a) XY+XY+XY = X+Y
+= (XY+XY)+(XY+XY)
+= X(Y+Y)+Y(X+X)
+= X+Y
+b) AB+BC+AB+BC = 1
+= (AB+AB)+(BC+BC)
+= B(A+A)+B(C+C)
+1Problem Solutions – Chapter 2
+B+B = 1
+c) Y+XZ+XY = X+Y+Z
+= Y+XY+XZ
+= (Y+X)(Y+Y)+XZ
+= Y+X+XZ
+= Y+(X+X)(X+Z)
+= X+Y+Z
+d) XY+YZ+XZ+XY+YZ = XY+XZ+YZ
+= XY+YZ(X+X)+XZ+XY+YZ
+= XY+XYZ+XYZ+XZ+XY+YZ
+= XY(1+Z)+XYZ+XZ+XY+YZ
+= XY+XZ(1+Y)+XY+YZ
+= XY+XZ+XY(Z+Z)+YZ
+= XY+XZ+XYZ+YZ(1+X)
+= XY+XZ(1+Y)+YZ
+= XY+XZ+YZ
+2-7.* a) XY+XYZ+XY = X+XYZ = (X+XY)(X+Z) = (X+X)(X+Y)(X+Z)
+= (X+Y)(X+Z) = X+YZ
+b) X+Y(Z+X+Z) = X+Y(Z+XZ) = X+Y(Z+X)(Z+Z) = X+YZ+XY
+= (X+X)(X+Y)+YZ = X+Y+YZ = X+Y
+c) WX(Z+YZ)+X(W+WYZ) = WXZ+WXYZ+WX+WXYZ
+= WXZ+WXZ+WX = WX+WX = X
+d) (AB+AB)(CD+CD)+AC = ABCD+ABCD+ABCD+ABCD+A+C
+= ABCD+A+C = A+C+A(BCD) = A+C+C(BD) = A+C+BD
+2-9.* a) F = (A+B)(A+B)
+b) F = ((V+W)X+Y)Z
+c) F = [W+X+(Y+Z)(Y+Z)][W+X+YZ+YZ]
+d) F = ABC+(A+B)C+A(B+C)
+2-10.*
+Truth Tables a, b, c
+X Y Z a A B C b W X Y Z c
+0 0 0 0 0 0 0 1 0 0 0 0 0
+0 0 1 0 0 0 1 1 0 0 0 1 0
+0 1 0 0 0 1 0 0 0 0 1 0 1
+0 1 1 1 0 1 1 1 0 0 1 1 0
+1 0 0 0 1 0 0 0 0 1 0 0 0
+1 0 1 1 1 0 1 0 0 1 0 1 0
+1 1 0 1 1 1 0 0 0 1 1 0 1
+1 1 1 1 1 1 1 1 0 1 1 1 0
+1 0 0 0 0
+2Problem Solutions – Chapter 2
+Truth Tables a, b, c
+1 0 0 1 0
+1 0 1 0 1
+1 0 1 1 0
+1 1 0 0 1
+1 1 0 1 1
+1 1 1 0 1
+1 1 1 1 1
+a) Sum of Minterms: XYZ+XYZ+XYZ+XYZ
+Product of Maxterms: (X+Y+Z)(X+Y+Z)(X+Y+Z)(X+Y+Z)
+b) Sum of Minterms: ABC+ABC+ABC+ABC
+Product of Maxterms: (A+B+C)(A+B+C)(A+B+C)(A+B+C)
+c) Sum of Minterms: WXYZ+WXYZ+WXYZ+WXYZ+WXYZ+WXYZ
++WXYZ
+Product of Maxterms: (W+X+Y+Z)(W+X+Y+Z)(W+X+Y+Z)
+(W+X+Y+Z)(W+X+Y+Z)(W+X+Y+Z)
+(W+X+Y+Z)(W+X+Y+Z)(W+X+Y+Z)
+2-12.* a) (AB+C)(B+CD) = AB+ABCD+BC = AB+BC s.o.p.
+= B(A+C) p.o.s.
+b) X+X(X+Y)(Y+Z) = (X+X)(X+(X+Y)(Y+Z))
+= (X+X+Y)(X+Y+Z) p.o.s.
+= (1+Y)(X+Y+Z) = X+Y+Z s.o.p.
+c) (A+BC+CD)(B+EF) = (A+B+C)(A+B+D)(A+C+D)(B+EF)
+= (A+B+C)(A+B+D)(A+C+D)(B+E)(B+F) p.o.s.
+(A+BC+CD)(B+EF) = A(B+EF)+BC(B+EF)+CD(B+EF)
+= AB+AEF+BCEF+BCD+CDEF s.o.p.
+2-15.*
+a) Y b) B c) B
+1 1 1 1 1 1 1 1 1
+X 1 1 A 1 A 1 1 1
+Z C C
+XZ+XY A+CB B+C
+2-18.*
+a) b) c)
+Y C
+Y 1 1 1
+1 1 1 1 1 1
+X B
+X 1 1 1 1 1 1 1 1
+W A
+Z 1 1 1
+Z D
+Σm(3,5,6,7) Σm(3,4,5,7,9,13,14,15) Σm(0,2,6,7,8,10,13,15)
+3Problem Solutions – Chapter 2
+2-19.*
+a) Prime = XZ,WX,XZ,WZ b) Prime = CD,AC,BD,ABD,BC c) Prime = AB,AC,AD,BC,BD,CD
+Essential = XZ,XZ Essential = AC,BD,ABD Essential = AC,BC,BD
+2-22.*
+a) s.o.p. CD+AC+BD b) s.o.p. AC+BD+AD c) s.o.p. BD+ABD+(ABC or ACD)
+p.o.s. (C+D)(A+D)(A+B+C) p.o.s. (C+D)(A+D)(A+B+C) p.o.s. (A+B)(B+D)(B+C+D)
+2-25.*
+a) b) Y c)
+C
+1 1
+B X X
+1 1 X
+X 1 1 X 1 1
+X B
+X 1 1
+A 1 X 1 W 1 1 X
+A
+1 X
+C 1 X X
+Z D
+Primes = AB,AC,BC,ABC Primes = XZ,XZ,WXY,WXY,WYZ,WYZ Primes = AB,C,AD,BD
+Essential = AB,AC,BC Essential = XZ Essential = C,AD
+F = AB+AC+BC F = XZ+WXY+WXY F = C+AD+(BD or AB)
+2-32.*
+X⊕Y = XY+XY
+Dual (X⊕Y) = Dual (XY+XY)
+= (X+Y)(X+Y)
+= XY+XY
+= XY+XY
+= X⊕Y
+4Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 3
+© 2008 Pearson Education, Inc.
+3-2.*
+C
+B F = AB + AC
+1 1 1 1
+A
+1 1
+D
+3-24.*
+a) b)
+VDD
+F
+7
+A G7
+F 6 A G 6
+F5 0 G 5
+F4 1 G4
+F3 A G3
+F
+2
+A G2
+F
+1
+1 G1
+F0 1 G 0
+1Problem Solutions – Chapter 3
+3-30.*
+D0
+D1
+D2
+D3
+D4
+D5
+D6
+D7
+DECODER
+D8
+A A A0 1
+2
+A A A0 1
+2
+0 1 2
+3
+D D9
+10
+4
+5 D11
+6
+7 D12
+D13
+DECODER
+D14
+AA 43 A A0
+1
+0 1
+2
+D15
+3 D16
+D17
+D18
+D19
+D20
+D21
+D22
+D23
+D24
+D25
+D26
+D27
+D28
+D29
+D30
+D31
+3-35.*
+A 1 D 1
+D 03 D 02 D 01 D 00 A X1 A X0 V 0 X DD 0 A1
+1
+X X X 1 0 0 1 1
+X
+X
+X
+1
+1
+0
+0
+0
+0
+1
+1
+0
+1
+1 D
+1 D 2 D2 A0
+3
+1 0 0 0 1 1 1 1
+V = D 0+D 1+D 2+D 3 D 0 A 0 D 1 D3 V
+A 0 = D 0(D 1+D 2) X 1
+A 1 = D 0D 1 1
+D
+2
+1
+D
+3
+1 1
+D
+0
+2Problem Solutions – Chapter 3
+3-42.*
+8x1 MUX
+D(7:0) D(7:0)
+Y0
+A(2:0) S (2:0)
+8x1 MUX
+D(14:8) D D(6:0) Y0
+(7)
+S(2:0)
+A(3)
+3 OR gates
+3-43.*
+Consider E as the data input and A0, A1 as the
+A A E D D D D select lines. For a given combination on (A1,
+1 0 0 1 2 3
+0 0 0 0 0 0 0 A0), the value of E is distributed to the corre-
+0 0 1 1 0 0 0 sponding D output. For example for (A1, A0) =
+0 1 0 0 0 0 0 (10), the value of E appears on D2, while all other
+0 1 1 0 1 0 0 outputs have value 0.
+1 0 0 0 0 0 0
+1 0 1 0 0 1 0
+1 1 0 0 0 0 0
+1 1 1 0 0 0 1
+3-47.*
+A B C D F C
+D
+0 0 0 0 0
+0 0 0 1 1
+F=D
+0 0 1 0 0
+4 x 1 MUX
+0 0 1 1 1
+0 1 0 0 1 B A S S0 1
+0 1 0 1 0
+0 1 1 0 0 F=C D VDD D D0
+1
+Y F
+0 1 1 1 0 D2
+1 0 0 0 0
+D3
+1 0 0 1 0
+F=C D
+1 0 1 0 0
+1 0 1 1 1
+1 1 0 0 1
+1 1 0 1 1
+F=1
+1 1 1 0 1
+1 1 1 1 1
+3Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 4
+© 2008 Pearson Education, Inc.
+4-2.*
+C = T +T = T C +T = A B C +A +B = (A +B )C +A B = (A B +C )(A +B )
+1 3 2 1 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+C = A B +A C +B C
+1 0 0 0 0 0 0
+S = C ⊕T = C ⊕T T = C ⊕A B (A +B ) = C ⊕(A +B )(A +B ) = C ⊕A B +A B
+0 0 4 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+S = A ⊕B ⊕C
+0 0 0 0
+T3
+T1
+T4
+T
+2
+4-3.*
+Unsigned 1001 1100 1001 1101 1010 1000 0000 0000 1000 0000
+1’s Complement 0110 0011 0110 0010 0101 0111 1111 1111 0111 1111
+2’s Complement 0110 0100 0110 0011 0101 1000 0000 0000 1000 0000
+4-6.*
++36 = 0100100 36 0100100
+- 24 = 1101000 +(–24) + 1101000
+- 35 = 1011101 10001100
+=12 = 0001100
+–35 1011101
+- (–24) + 0011000
+= –11 = 1110101
+4-16.*
+S A B C S S S S
+4 3 2 1 0
+a) 0 0111 0111 0 1 1 1 0
+b) 1 0100 0111 0 1 1 0 1
+c) 1 1101 1010 1 0 0 1 1
+d) 0 0111 1010 1 0 0 0 1
+e) 1 0001 1000 0 1 0 0 1
+1Problem Solutions – Chapter 4
+4-20.*
+N1
+X1 N2
+X2
+N6
+N3 f
+N4
+X3
+N5
+X4
+4-24.*
+begin
+F <= (X and Z) or ((not Y) and Z);
+end;
+4-29.*
+The solution given is very thorough since it checks each of the carry connections between adjacent cells
+transferring 0 and 1. In contrast a test applying C0 = 1 and A = 15 with B = 0 would allow a whole
+variety of incorrect connections between cells that would not be detected.
+4-31.*(Errata: Replace “E” with “EN”.)
+1
+2Problem Solutions – Chapter 4
+4-34.*
+N1
+X1 N2
+X2
+N6
+N3 f
+N4
+X3
+N5
+X4
+4-38.*
+module circuit_4_53(X, Y, Z, F);
+input X, Y, Z;
+output F;
+assign F = (X & Z) | (Z & ~Y);
+endmodule
+4-43.*
+The solution given is very thorough since it checks each of the carry connections between adjacent cells
+transferring 0 and 1. In contrast a test applying C0 = 1 and A = 15 with B = 0 would allow a whole
+variety of incorrect connections between cells that would not be detected.
+3Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 5
+© 2008 Pearson Education, Inc.
+5-7.*
+Present state Input Next state X = 0
+000 100 110 011
+A B C X A B C
+0 0 0 0 1 0 0
+0 0 0 1 0 0 0 111
+001 010 101
+0 0 1 0 0 0 0
+0 0 1 1 1 0 0
+0 1 0 0 0 0 1
+0 1 0 1 1 0 1 X = 1
+0 1 1 0 1 0 1
+0 1 1 1 0 0 1 001 100 010 101
+1 0 0 0 1 1 0
+1 0 0 1 0 1 0
+1 0 1 0 0 1 0 000
+011 111 110
+1 0 1 1 1 1 0
+1 1 0 0 0 1 1
+1 1 0 1 1 1 1
+State diagram is the combination of the above two diagrams.
+1 1 1 0 1 1 1
+1 1 1 1 0 1 1
+5-11.*
+S = B S = X⊕A
+A B
+R = B R = X⊕A
+A B 1/1
+0/0
+0 1
+Present state Input Next state Output
+A B X A B Y 1/0
+0/1 0/1
+0 0 0 0 1 0
+1/0
+0 0 1 0 0 1
+0 1 0 1 1 1 2 3
+0 1 1 1 0 0 0/0
+1/1
+1 0 0 0 0 1
+1 0 1 0 1 0
+Format: X/Y
+1 1 0 1 0 0
+1 1 1 1 1 1
+5-13.*
+Present state Input Next state D A B D B B
+1 1
+A B X A B
+A 1 1 1 A 1 1 1
+0 0 0 0 0
+0 0 1 1 0 X X
+0 1 0 0 1
+0 1 1 0 0 D A = AX + BX D B = AX + BX
+1 0 0 1 0
+1 0 1 1 1 Logic diagram not given.
+1 1 0 1 1
+1 1 1 0 1
+1Problem Solutions – Chapter 5
+5-18.*
+Format: XY/Z (x = unspecified)
+Present state Inputs Next state Output
+x1/x
+00/0 00/1 Q(t) X Y Q(t+1) Z
+x1/x 10/0
+0 1 0 0 0 0 0
+0 0 1 0 X
+0 1 0 1 1
+10/1 0 1 1 0 X
+1 0 0 1 1
+1 0 1 0 X
+1 1 0 1 0
+1 1 1 0 X
+5-26.*
+To use a one-hot assignment, the two flip-flops A and B
+No Reset State Specified.
+need to be replaced with four flip-flops Y4, Y3, Y2. Y1.
+D1 = Y1’= X·Y1 + X·Y4
+Present State Input Next State Output
+D2 = Y2’ = X·Y1 + X·Y2
+A B Y4 Y3 Y2 Y1 X A’ B" Y4’Y3’Y2’Y1 Z D3 = Y3’ = X·Y2 + X·Y3
+0 0 0 0 0 1 0 0 1 0 0 1 0 1 D4 = Y4’ = X·Y3 + X·Y4
+0 0 0 0 0 1 1 0 0 0 0 0 1 1
+0 1 0 0 1 0 0 0 1 0 0 1 0 0
+0 1 0 0 1 0 1 1 0 0 1 0 0 0
+1 0 0 1 0 0 0 1 1 1 0 0 0 0
+1 0 0 1 0 0 1 1 0 0 1 0 0 0
+1 1 1 0 0 0 0 1 1 1 0 0 0 0
+1 1 1 0 0 0 1 0 0 0 0 0 1 0
+X
+Y1
+D Y
+C
+Y2
+D
+C
+Y3
+D
+C
+Y4
+D
+C
+Clock
+2Problem Solutions – Chapter 5
+5-27.*
+a) b) Format: SR
+S R Q
+0 0 Q No Change 10,11
+0 1 0 Reset 00,01 00, 10, 11
+1 0 1 Set 0 1
+1 1 1 Set
+01
+c)
+Present state Input Next state
+Q S R Q(t+1) A B
+0 0 0 0 0 x
+0 0 1 0 0 x
+0 1 0 1 1 0
+0 1 1 1 1 0
+1 0 0 1 x 0
+1 0 1 0 0 1
+1 1 0 1 x 0
+1 1 1 1 x 0
+A = S
+B = SR
+A
+S Q
+S B
+R
+R
+Clock
+*5-31.
+1 2 8 3 Reset, 00, 01, 00, 01, 11, x0, x0, 01, 10,
+00/0 01/0 00/1 01, 01, 11, 11, 11, 10.
+RESET 0 11/0 1
+14
+7 11 10/1 4 9
+x0/0, 01/1
+1211/1
+15 01/1, 10/0
+11/1
+13
+3 2
+x0/1, 01/0
+11/0
+6 10 5
+Format: XY/Z
+3Problem Solutions – Chapter 5
+5-33.*
+Clock
+J
+K
+Y
+Q
+0 ps 50 ns 100 ns 150 ns
+This simulation was performed without initializing the state of the latches of the flip-flop beforehand.
+Each gate in the flip-flop implementation has a delay of 1 ns. The interaction of these delays with the
+input change times produced a narrow pulse in Y at about 55 ns. In this case, the pulse is not harmful
+since it dies out well before the positive clock edge occurs. Nevertheless, a thorough examination of such
+a pulse to be sure that it does not represent a design error or important timing problem is critical.
+5-37.*
+( )
+4Problem Solutions – Chapter 5
+5-40.*
+library IEEE; architecture mux_4to1_arch of mux_4to1 is
+use IEEE.std_logic_1164.all; begin
+entity mux_4to1 is process (S, D)
+port ( begin
+S: in STD_LOGIC_VECTOR (1 downto 0); case S is
+D: in STD_LOGIC_VECTOR (3 downto 0); when "00" => Y <= D(0);
+Y: out STD_LOGIC when "01" => Y <= D(1);
+); when "10" => Y <= D(2);
+end mux_4to1; when "11" => Y <= D(3);
+when others => null;
+-- (continued in the next column) end case;
+end process;
+end mux_4to1_arch;
+5-45.*
+library IEEE; case J is
+use IEEE.std_logic_1164.all; when '0' =>
+entity jkff is if K = '1' then
+port ( q_out <= '0';
+J,K,CLK: in STD_LOGIC; end if;
+Q: out STD_LOGIC when '1' =>
+); if K = '0' then
+end jkff; q_out <= '1';
+else
+architecture jkff_arch of jkff is q_out <= not q_out;
+signal q_out: std_logic; end if;
+begin when others => null;
+end case;
+state_register: process (CLK) end if;
+begin end process;
+if CLK'event and CLK='0' then --CLK falling edge
+Q <= q_out;
+-- (continued in the next column) end jkff_arch;
+5-49.*
+module problem_6_39 (S, D, Y) ; always @(S or D)
+begin
+input [1:0] S ; if (S == 2'b00) Y <= D[0];
+input [3:0] D ; else if (S == 2'b01) Y <= D[1];
+output Y; else if (S == 2'b10) Y <= D[2];
+reg Y ; else Y <= D[3];
+// (continued in the next column) end
+endmodule
+5-53.*
+module JK_FF (J, K, CLK, Q) ; always @(negedge CLK)
+case (J)
+input J, K, CLK ; 0'b0: Q <= K ? 0: Q;
+output Q; 1'b1: Q <= K ? ~Q: 1;
+reg Q; endcase
+endmodule
+5Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 6
+© 2008 Pearson Education, Inc.
+6-1.*
+a) F = (A + B) C D
+b) G = (A + B) (C + D)
+6-4*
+The longest path is from input C or D.
+0.073 ns + 0.073 ns + 0.048 ns + 0.073 ns = 0.267 ns
+6-10.*
+a) The longest direct path delay is from input X through the two XOR gates to the output Y.
+t = t + t = 0.20 + 0.20 = 0.40 ns
+delay pdXOR pdXOR
+b) The longest path from an external input to a positive clock edge is from input X through the XOR gate and
+the inverter to the B Flip-flop.
+t = t + t + t = 0.20 + 0.05 + 0.1 = 0.35 ns
+delay pdXOR pd INV sFF
+c) The longest path delay from the positive clock edge is from Flip-flop A through the two XOR gates to the
+output Y.
+t = t + 2 t = 0.40 + 2(0.20) = 0.80 ns
+delay pdFF pdXOR
+d) The longest path delay from positive clock edge to positive clock edge is from clock on Flip-flop A through
+the XOR gate and inverter to clock on Flip-flop B.
+t = t + t + t + t = 0.40 + 0.20 + 0.05 + 0.10 = 0.75 ns
+delay-clock edge to clock edge pdFF pdXOR pdINV sFF
+e) The maximum frequency is 1/t . For this circuit, t
+delay- clock edge to clock edge delay-clock edge to clock edge
+is 0.75 ns, so the maximum frequency is 1/0.75 ns = 1.33 GHz.
+Comment: The clock frequency may need to be lower due to other delay paths that pass outside of the circuit
+into its environment. Calculation of this frequency cannot be performed in this case since data for paths through
+the environment is not provided.
+1Problem Solutions – Chapter 6
+6-13.* (Errata: Change "32 X 8" to "64 X 8" ROM)
+IN OUT IN OUT IN OUT IN OUT
+000000 0000 0000 010000 0001 0110 100000 0011 0010 110000 0100 1000
+000001 0000 0001 010001 0001 0111 100001 0011 0011 110001 0100 1001
+000010 0000 0010 010010 0001 1000 100010 0011 0100 110010 0101 0000
+000011 0000 0011 010011 0001 1001 100011 0011 0101 110011 0101 0001
+000100 0000 0100 010100 0010 0000 100100 0011 0110 110100 0101 0010
+000101 0000 0101 010101 0010 0001 100101 0011 0111 110101 0101 0011
+000110 0000 0110 010110 0010 0010 100110 0011 1000 110110 0101 0100
+000111 0000 0111 010111 0010 0011 100111 0011 1001 110111 0101 0101
+001000 0000 1000 011000 0010 0100 101000 0100 0000 111000 0101 0110
+001001 0000 1001 011001 0010 0101 101001 0100 0001 111001 0101 0111
+001010 0001 0000 011010 0010 0110 101010 0100 0010 111010 0101 1000
+001011 0001 0001 011011 0010 0111 101011 0100 0011 111011 0101 1001
+001100 0001 0010 011100 0010 1000 101100 0100 0100 111100 0110 0000
+001101 0001 0011 011101 0010 1001 101101 0100 0101 111101 0110 0001
+001110 0001 0100 011110 0011 0000 101110 0100 0110 111110 0110 0010
+001111 0001 0101 011111 0011 0001 101111 0100 0111 111111 0110 0011
+6-19.*
+Assume 3-input OR gates.
+W C C C C
+0 0 0 0 0 1 1 1 1 0 1 0 1 0 0 1
+0 1 1 1 1 0 0 0 1 0 1 0 1 0 0 1
+B B B B
+d d d d d d d d d d d d d d d d
+A A A A
+1 1 d d 0 1 d d 1 0 d d 1 0 d d
+D D D D
+W = A + BC + BD X = BC D + BC + BD Y = CD + C D Z = D
+Each of the equations above is implemented using one 3-input OR gate. Four gates are used.
+2Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 7
+© 2008 Pearson Education, Inc.
+7-2. *
+1001 1001
+1100 0011
+1000 0001 AND
+1101 1011 OR
+0101 1010 XOR
+7-4.*
+sl 1001 0100 sr 0110 0101
+7-5.*
+Q remains connected to MUX data input 0. Connect D to MUX data input 1 instead of Mux data input 3. Connect Q to
+i i i-1
+MUX data input 2 instead of MUX data input 1. Finally, 0 is connected to MUX data input 3.
+7-6.*
+a) 1000, 0100, 0010, 0001, 1000. ...
+b) # States = n
+1Problem Solutions – Chapter 7
+7-13.*
+The equations given on page 364-5 can be manipulated into SOP form as follows: D =
+1
+Q , D = Q ⊕ Q Q = Q Q Q + Q Q + Q Q , D = Q ⊕ Q Q = Q Q Q + Q Q
+1 2 2 1 8 1 2 8 1 2 2 8 4 4 1 2 1 2 4 1 4
++ Q Q D = Q ⊕ (Q Q + Q Q Q ) = Q (Q Q +Q Q Q ) + Q (Q + Q )(Q + Q
+2 4, 8 8 1 8 1 2 4 8 1 8 1 2 4 8 1 8 1 2
++ Q ) = Q Q Q Q + Q Q . These equations are mapped onto the K-maps for Table
+4 1 2 4 8 1 8
+7-9 below and meet the specifications given by the maps and the table.
+D 1 Q 2 D 2 Q 2
+1 0 0 1 0 1 0 1
+1 0 0 1 0 1 0 1
+Q 8 X X X X Q 4 Q 8 X X X X Q 4
+1 0 X X 0 0 X X
+Q 1 Q 1 To add the enable,
+change D1 to:
+D 4 Q 2 D 8 Q 2
+D = Q ⊕ EN.
+0 0 1 0 0 0 0 0 1 1
+For the other three func-
+1 1 0 1 0 0 1 0
+Q 4 Q 4 tions, AND EN with the
+Q 8 X X X X Q 8 X X X X expression XORed with
+0 0 X X 1 0 X X the state variable. The
+Q 1 Q 1 circuit below results.
+D Q1 Y
+C
+Q2
+D
+EN
+C
+Q
+D 4
+C
+Q
+8
+D
+C
+Clock
+7-14.*
+Present state Next state a) D B = C b) D A = BC + AC
+A B C A B C D C = B C D B = A BC + BC
+0 0 0 1
+D = C
+0 1 1 0 C
+1 0 0 0
+0 0 0 0 0 1
+0 0 1 0 1 0
+0 1 0 0 1 1
+0 1 1 1 0 0
+1 0 0 1 0 1
+1 0 1 0 0 0
+2Problem Solutions – Chapter 7
+7-17.*
+R1 R2
+Load Load
+C3
+Clock
+7-19.*
+R1
+C2C1C0 LOAD
+C
+D D D D0 1 2
+3
+Q Q Q Q0 1 2
+3
+R2
+LOAD
+C
+D D D D0 1 2
+3
+Q Q Q Q0 1 2
+3
+Clock
+7-24.*
+a)
+CLK CTR 4
+R2 ADD 4 C1 Load
+REG 4 0 CI CC1 2 Count R1
+D(0-3) Q(0-3) A(0-3) C(0-3) D (0-3) Q(0-3)
+B (0-3) CO CO
+R1
+b)
+C1 REG 4
+C2 D(0-3)LQ
+(0-3)
+ADD 4
+CI R2
+A (0-3) C(0-3) REG 4
+B(0-3) CO D(0-3)LQ(0-3)
+Clock
+3Problem Solutions – Chapter 7
+7-27.*
+a) Destination <- Source Registers b) Source Registers -> Destination
+R0 <- R1, R2 R0 -> R4
+R1 <- R4 R1 -> R0, R3
+R2 <- R3, R4 R2 -> R0, R4
+R3 <- R1 R3 -> R2
+R4 <- R0, R2 R4 -> R1, R2
+c) The minimum number of buses needed for operation of the transfers
+is three since transfer Cb requires three different sources.
+d)
+R0 R1 R2 R3 R4
+MUX MUX
+MUX
+7-30.*
+0101, 1010, 0101, 1010, 1101, 0110, 0011, 0001, 1000
+7-31.*
+Shifts: 0 1 2 3 4
+A 0111 0011 0001 1000 1100
+B 0101 0010 0001 0000 0000
+C 0 1 1 1 0
+7-32.*
+Default: Z1 = 0, Z2 = 0
+X1 + X2
+X1
+X1 · X2
+X1 X1 + X2
+S0 S1 S2
+Z2 Z1
+X1 + X2
+Reset
+7-33.*
+State: STA, STA, STB, STC, STA, STB, STC, STA, STB
+Z: 0, 0, 1, 1, 0, 0, 1, 0, -
+4Problem Solutions – Chapter 7
+7-36.*
+Default: Z = 0 Reset STA
+X X
+X STB STD X
+X X
+X X
+X
+STC STE
+Z X Z
+7-39.*
+D = AW + BXY + C
+Present state Input Next state Output A
+A B C A B C D B = AW
+STA 1 0 0 W 1 0 0 D C = B (X + Y)
+1 0 0 W 0 1 0
+0 1 0 XY 1 0 0 Z = B X Y + C
+STB 0 1 0 X 0 0 1 The implementation consists of the logic represented
+0 1 0 X Y 0 0 1 Z by the above equations and three D flip-flops with
+STC 0 0 1 1 0 0 Z Reset connected to S on the first flip-flop and to R
+on the other two flip-flops.
+7-46.*
+IN
+A(14:0)||0 B(14:0)||0
+CLK CLK
+S 1 MUX0
+LA L AR LB L BR
+CLK
+A(15:0) Bit 15 B(15:0) LC L CR
+R
+Zero
+R is a synchronous reset that overides any
+simultaneous synchronous transfer.
+Default: LA = 0, Reset A G
+LB = 0, LC = 0
+G
+LA
+B
+LB
+C
+LC
+5Problem Solutions – Chapter 7
+G
+D D D LC
+C C C
+R R R
+LA LB
+Reset
+7-48.*
+library IEEE;
+use IEEE.std_logic_1164.all;
+entity reg_4_bit is
+port (
+CLEAR, CLK: in STD_LOGIC;
+D: in STD_LOGIC_VECTOR (3 downto 0);
+Q: out STD_LOGIC_VECTOR (3 downto 0)
+);
+end reg_4_bit;
+architecture reg_4_bit_arch of reg_4_bit is
+begin
+process (CLK, CLEAR)
+begin
+if CLEAR ='0' then --asynchronous RESET active Low
+Q <= "0000";
+elsif (CLK'event and CLK='1') then --CLK rising edge
+Q <= D;
+end if;
+end process;
+end reg_4_bit_arch;
+clk
+clear
+d 00000000 11001100 00110011 11111111
+q 00000000 11001100 00110011 00000000
+0 40
+6Problem Solutions – Chapter 7
+7-51.*
+module register_4_bit (D, CLK, CLR, Q) ;
+input [3:0] D ;
+input CLK, CLR ;
+output [3:0] Q ;
+reg [3:0] Q ;
+always @(posedge CLK or negedge CLR)
+begin
+if (~CLR) //asynchronous RESET active low
+Q = 4'b0000;
+else //use CLK rising edge
+Q = D;
+end
+endmodule
+CLK
+CLR
+D 00000000 11001100 00110011 11111111
+QQ 0000000000000000 1111000011110000 0000111100001111 0000000000000000
+0 20 40 60
+7-53.*
+library IEEE; if W = '1' then
+use IEEE.std_logic_1164.all; next_state <= STB;
+entity prob_7_53 is else
+port (clk, RESET, W, X, Y : in STD_LOGIC; next_state <= STA;
+Z : out STD_LOGIC); end if;
+end prob_7_53; when STB =>
+if X = '0' and Y = '1' then
+architecture process_3 of prob_7_53 is next_state <= STA;
+type state_type is (STA, STB, STC); else
+signal state, next_state: state_type; next_state <= STC;
+begin end if;
+when STC =>
+-- Process 1 - state register next_state <= STA;
+state_register: process (clk, RESET) end case;
+begin end process;
+if (RESET = '1') then
+state <= STA; -- Process 3 - output function
+else if (CLK'event and CLK='1') then output_func: process (X, Y, state)
+state <= next_state; begin
+end if; case state is
+end if; when STA =>
+end process; Z <= '0';
+when STB =>
+-- Process 2 - next state function if X = '0' and Y = '0' then
+next_state_func: process (W, X, Y, state) Z <= '1';
+begin else
+case state is Z <= '0';
+when STA => end if;
+-- Continued in next column when STC =>
+Z <= '1';
+end case;
+end process;
+end process_3;
+7Problem Solutions – Chapter 7
+7-54.*
+// State Diagram in Figure 5-40 using Verilog next_state <= STA;
+module prob_7_54 (clk, RESET, W, X, Y, Z); STB: if (X == 0 & Y == 1)
+input clk, RESET, W, X, Y; next_state <= STA;
+output Z; else
+next_state <= STC;
+reg[1:0] state, next_state; STC:
+parameter STA = 2'b00, STB = 2'b01, STC = 2'b10; next_state <= STA;
+reg Z; endcase
+end
+// State Register
+always@(posedge clk or posedge RESET) // Output Function
+begin always@(X or Y or state)
+if (RESET == 1) begin
+state <= STA; Z <= 0;
+else case (state)
+state <= next_state; STB: if (X == 0 & Y == 0)
+end Z <= 1;
+else
+// Next StateFunction Z <= 0;
+always@(W or X or Y or state) STC:
+begin Z <= 1;
+case (state) endcase
+STA: if (W == 1) end
+next_state <= STB; endmodule
+else
+// (continued in the next column)
+8Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 8
+© 2008 Pearson Education, Inc.
+8-1.*
+a) A = 16, D = 8 b) A = 19, D = 32 c) A = 26, D = 64 d) A = 31, D = 1
+8-3.*
+Number of bits in array = 216 x 24 = 220 = 210 * 210
+Row Decoder size = 210
+a) Row Decoder = 10 to 1024, AND gates = 210 = 1024 (assumes 1 level of gates with 10 inputs/gate)
+Column Decoder = 6 to 64, AND gates = 26 = 64 (assumes 1 level of gates with 6 inputs/gate)
+Total AND gates required = 1024 + 64 =1088
+b) (32000) = (0111110100 000000) , Row = 500, Column = 0
+10 2
+8-8.*
+a) 2 MB/128 K x 16 = 2MB/ 256 KB = 8 b) With 2 byte/word, 2MB/2B = 220, Add Bits = 20
+128K addresses per chip implies 17 address bits. c) 3 address lines to decoder, decoder is 3-to-8-line
+1Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 9
+© 2008 Pearson Education, Inc.
+9-2.*
+C = C
+8
+V = C ⊕ C
+8 7
+Z = F +F +F +F +F +F +F +F
+7 6 5 4 3 2 1 0
+N = F
+7
+9-3.*
+Cin
+X = S A + S A
+0 0 C
+0
+Y = S1 Cin B + S1S0 B + S1S0B + S1S0Cin A 0 D0 B 0 D0 X
+A 0 D1 D1 Adder G0
+S D2 Y
+0 D3
+S1S0 C 1
+X
+S
+1 Adder G1
+A D0 Y
+1
+S1S0
+A 1 D1 B 1 D0 C2
+S
+D1
+S
+0
+D2
+0 D3
+9-4.* (Errata: Delete “1” after problem number)
+S1 C i
+X = A S1 + A S0
+S0 X
+Y = B S1 S0 + B S1 A i FA G
+i
+Y
+S1S0
+B i D0 C I + 1
+0 D1
+B i D2
+B i D3
+9-6.*
+a) XOR = 00, NAND = 01, NOR = 10 XNOR = 11
+Out = S A B + S AB + S AB + S S AB + (one of S A B + S S A)
+1 1 1 1 0 0 1 0
+b) The above is a simplest result.
+9-8.*
+(a) 1010 (b) 1110 (c) 0101 (d) 1101
+1Problem Solutions – Chapter 9
+9-10.*
+(a) R5←R4∧R5 R5 = 0000 0100 (d) R5←R0 R5 = 0000 0000
+(b) R6←R2+R4+1 R6 = 1111 1110 (e) R4←srConstant R4 = 0000 0011
+(c) R5←R0 R5 = 0000 0000 (f) R3←Data in R3 = 0001 1011
+9-13.*
+a) Opcode = 8 bits b) 18 bits c) 262,144 d) +131,071 and –131,072
+2Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 10
+© 2008 Pearson Education, Inc.
+10-2.*
+a) LD R1, E b) MOV T1, A c) LD E
+LD R2, F ADD T1, B MUL F
+MUL R1, R1, R2 MUL T1, C ST T1
+LD R2, D MOV T2, E LD D
+SUB R1, R2, R1 MUL T2, F SUB T1
+LD R2, C MOV T3, D ST T1
+DIV R1, R2, R1 SUB T3, T2 LD A
+LD R2, A DIV T1, T3 ADD B
+LD R3, B MOV Y, T1 MUL C
+ADD R2, R2, R3 DIV T1
+MUL R1, R1, R2 ST Y
+ST Y, R1
+10-3.*
+a) (A - B) x (A + C) x (B - D) = A B - A C +x B D -x
+b, c) PUSH A PUSH B SUB PUSH A PUSH C ADD
+A B A-B A C A+C
+A A-B A A-B
+A-B
+MUL PUSH B PUSH D SUB MUL POP X
+(A-B)x(A+C) B D B-D (A-B)x(A+C)x(B-D)
+(A-B)x(A+C) B (A-B)x(A+C)
+(A-B)x(A+C)
+10-6.*
+a) X = 195 – 208 – 1 = –14 b) X = 1111 1111 1111 0010
+The number is negative because the branch is backwards. The − 1
+assumes that the PC has been incremented to point to the address
+after that of the address word of the instruction.
+10-10.*
+a) 3 Register Fields x 4 bits/Field = 12 bits. 32 bits - 12 bits = 20 bits. 220 = 1048576
+b) 64 < 100 < 128 => 7 bits. 2 Register Fields x 4 bits/Field => 8 bits. 32 bits - 7 bits - 8 bits => 17 Address Bits
+1Problem Solutions – Chapter 10
+10-14.*
+a) ADD R0, R4 b) R0←7B+4B, R0 = C6, C = 0
+ADC R1, R5 R1←24+ED+0, R1 = 11, C = 1
+ADC R2, R6 R2←C6+57+1, R2 = 1E, C = 1
+ADC R3, R7 R3←1F+00+1, R3 = 20, C = 0
+10-17.*
+Result
+OP Register C
+0110 1001 1
+SHR 0011 0100 1
+SHL 0110 1000 0
+SHRA 0011 0100 0
+SHLA 0110 1000 0
+ROR 0011 0100 0
+ROL 0110 1000 0
+RORC 0011 0100 0
+ROLC 01101000 0
+10-19.*
+Smallest Number = 0.5 × 2–255
+Largest Number = (1 – 2–26) × 2+255
+10-20.*
+E e (e)
+2
++8 15 1111
++7 14 1110
++6 13 1101
++5 12 1100
++4 11 1011
++3 10 1010
++2 9 1001
++1 8 1000
+0 7 0111
+–1 6 0110
+–2 5 0101
+–3 4 0100
+–4 3 0011
+–5 2 0010
+–6 1 0001
+–7 0 0000
+10-23.*
+TEST (0001) , R (AND Immediate 1 with Register R)
+16
+BNZ ADRS (Branch to ADRS if Z = 0)
+2Problem Solutions – Chapter 10
+10-25.*
+a) A = 0101 1101 93
+B = 0101 1100 -92
+A – B = 0000 0001 1
+b) C (borrow) = 0, Z = 0
+c) BA, BAE, BNE
+10-27.*
+PC SP TOS
+a) Initially 2000 4000 5000
+b) After Call 0502 4001 2002
+c) After Return 2002 4000 5000
+10-30.*
+External Interrupts: Internal Interrupts:
+1) Hard Drive 1) Overflow
+2) Mouse 2) Divide by zero
+3) Keyboard 3) Invalid opcode
+4) Modem 4) Memory stack overflow
+5) Printer 5) Protection violation
+A software interrupt provides a way to call the interrupt routines normally associated with
+external or internal interrupts by inserting an instruction into the code. Privileged system
+calls for example must be executed through interrupts in order to switch from user to
+system mode. Procedure calls do not allow this change.
+3Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 11
+© 2008 Pearson Education, Inc.
+11-2.*
+a) The latency time = 0.5 ns x 8 = 4.0 ns.
+b) The maximum throughput is 1 instruction per cycle or 2 billion instructions per second.
+c) The time required to execute is 10 instruction + 8 pipe stages -1 = 17 cycles *0.5ns = 8.5ns
+11-6.*
+Cycle 1: PC = 10F
+Cycle 2: PC = 110, IR = 4418 2F01
+-1 16
+Cycle 3: PC = 110, RW = 1, DA = 01, MD = 0, BS = 0, PS = X, MW = 0, FS = 2, SH = 01, MA = 0, MB = 1
+-2
+BUS A = 0000 001F, BUS B = 0000 2F01
+Cycle 4: RW = 1, DA = 01, MD = 0, D0 = 0000 2F20, D1 = XXXX XXXX, D2 = 0000 00000
+Cycle 5: R1 = 0000 2F20
+11-10.*
+1 2 3 4 5 6
+MOVA R7, R6 IF DOF EX WB Data Hazard
+SUB R8, R8, R6 IF DOF EX WB
+AND R8, R8, R7 IF DOF EX WB
+11-12.*
+a) 1 2 3 4 5 6 7
+MOV R7,R6 IF DOF EX WB
+SUB R8,R8,R6 IF DOF EX WB
+NOP IF DOF EX WB
+AND R8,R8,R7 IF DOF EX WB
+b) 1 2 3 4 5 6 7
+SUB R7,R7,R2 IF DOF EX WB
+NOP IF DOF EX WB
+BNZ R7,000F IF DOF EX WB
+NOP IF DOF EX WB
+NOP IF DOF EX WB
+AND R8,R7,R4 IF DOF EX WB
+NOP IF DOF EX WB
+OR R4,R8,R2 IF DOF EX WB
+1Problem Solutions – Chapter 11
+11-15.*
+Time Cycle 1
+IF PC: 0000 0001
+DOFPC :XXXXXXXXIR: XXXXXXXX
+-1
+EX PC :XXXXXXXXA: XXXXXXXXB: XXXXXXXX RW:XDA:XXMD:XBS:XPS:XMW:XFS:X MB:X MA:X CS:XD':X
+-2
+WB D0: XXXXXXXX D1:XXXXXXXXD2:XXXXXXXXRW:XDA:XXMD:X
+Time Cycle 2
+IF PC: 0000 0002
+DOFPC :0000 0002 IR: 0A73 8800
+-1
+EX PC :XXXXXXXX A: XXXXXXXXB: XXXXXXXX RW:XDA:XXMD:XBS:XPS:XMW:XFS:XMB:X MA:X CS:XD':X
+-2
+WB D0: XXXXXXXXD1:XXXXXXXXD2:XXXXXXXXRW:XDA:XXMD:X
+Time Cycle 3
+IF PC: 0000 0003
+DOFPC -1:0000 0003 IR: 9003 800F
+EX PC -2:0000 0002 A: 0000 0030 B: 0000 0010 RW:1 DA:07 MD:0 BS:0PS:XMW:0FS:5MB:0MA:0 CS:XD':X
+WB D0: XXXXXXXX D1:XXXXXXXX D2:XXXXXXXX RW:XDA:XXMD:X
+Time Cycle 4
+IF PC: 0000 0004
+DOF PC :0000 0004 IR:1083 9000
+-1
+EX PC :0000 0003 A: 0000 0020 B: XXXXXXXX RW:0 DA:XX MD:X BS:1 PS:1 MW:0 FS:0 MB:1 MA:2 CS:1 D':1
+-2
+WB D0: 0000 0020 D1:XXXX XXXX D2:0000 0000 RW:1 DA:07 MD: 0 PC: 0000 0012
+Time Cycle 5
+IF PC: 0000 0013 R7: 0000 0020
+DOFPC : 0000 00013 IR: 1244 0800
+-1
+EX PC : 0000 0004 A: 0000 0020 B: 0000 0020 RW: 1 DA: 08 MD: 0 BS: 0PS: XMW: 0 FS: 8 MB:0 MA:0 CS:XD':X
+-2
+WB D0: 0000 0020 D1: XXXXXXXX D2: 0000 0000 RW: 0 DA: 00 MD: 0
+Time Cycle 6
+IF PC: 0000 0014
+DOFPC : 0000 0014 IR: XXXX XXXX
+-1
+EX PC : 0000 0013 A: 0000 0020 B: 0000 0010 RW: 1 DA: 04 MD: 0 BS: 0 PS: X MW: 0 FS: 9 MB:0 MA:0 CS:X D':X
+-2
+WB D0: 0000 0010 D1: XXXX XXXX D2: 0000 0000 RW: 1 DA: 08 MD: 0
+Time Cycle 7
+IF PC: 0000 0014 R7: 0000 0020
+DOF PC : 0000 0014 IR: XXXX XXXX
+-1
+EX PC : 0000 0013 A:XXXX XXXX B: XXXX XXXX RW: X DA: XX MD:X BS: X PS:X MW:X FS:X MB:X CS:X D’:X
+-2
+WB D0: 0000 0010 D1: XXXX XXXX D2: 0000 0000 RW: 1 DA: 04 MD:0
+Time Cycle 8
+R4: 0000 0010
+Fields not specified above have fixed values throughout or are unused: SH. Based on the register contents, the branch is
+taken. The data hazards are avoided, but due to the control hazard, the last two instructions are
+erroneously executed.
+2Problem Solutions – Chapter 11
+11-18.*
+AA 3:0 D0 FAA DA 3:0 D0 FBA BA 3:0 D0 FDA
+3:0 3:0 3:0
+AX D1 BA D1 DA D1
+3:0 FAA 3:0 FBA 3:0 FDA
+4 4 4
+BX D2 DX D2
+3:0 3:0
+BX D3 DX D3
+3:0 3:0
+S0 S1S0 S1 S0
+AX BX DX
+4 4 4
+DX
+0
+DX
+1
+DX
+2
+DX
+3
+DX
+4
+11-22.*
+(a) Add with carry
+R M P M L M
+Action Address MZ CA W DX D BS S W FS C MA B AX BX CS
+R ←CC∧00010 AWC0 01 02 1 1F 0 00 0 0 8 0 10 1 00 00 11
+31
+R ←R[SA]+R[SB] AWC1 01 00 1 10 0 00 0 0 2 0 00 0 00 00 00
+16
+if (R 31=0)MC←AWC5 AWC2 11 AWC5 0 00 0 00 0 0 0 0 00 0 1F 00 00
+else MC←MC+1
+MC←MC+1(NOP) AWC3 01 00 0 00 0 00 0 0 0 0 00 0 00 00 00
+R[DR]←R +1 AWC4 01 01 1 01 0 00 0 0 2 0 00 1 10 00 11
+16
+MC←IDLE AWC5 00 IDLE 0 00 0 00 0 0 0 0 00 0 00 00 00
+(a) Subtract with borrow
+R M P M L M
+Action Address MZ CA W DX D BS S W FS C MA B AX BX CS
+R ←CC∧00010 SWB0 01 02 1 1F 0 00 0 0 8 0 10 1 00 00 11
+31
+R ←R[SA]–R[SB] SWB1 01 00 1 10 0 00 0 0 5 0 00 0 00 00 00
+16
+if (R 31≠0)MC←SWB5 SWB2 11 SWB5 0 00 0 00 1 0 0 0 00 0 1F 00 00
+else MC←MC+1
+MC←MC+1(NOP) SWB3 01 00 0 00 0 00 0 0 0 0 00 0 00 00 00
+R[DR]←R –1 SWB4 01 01 1 01 0 00 0 0 5 0 00 1 10 00 11
+16
+MC←IDLE SWB5 00 IDLE 0 00 0 00 0 0 0 0 00 0 00 00 00
+3Problem Solutions – Chapter 11
+11-24.*
+Memory Scalar Add (Assume R[SB] > 0 to simplify coding)
+R M P M L M
+Action Address MZ CA W DX D BS S W FS C MA B AX BX CS
+R ←R[SB] MSA0 01 00 1 10 0 00 0 0 0 0 00 0 00 00 00
+16
+R ←R MSA1 01 00 1 12 0 00 0 0 0 0 00 0 00 00 00
+18 0
+R ←R –1 MSA2 01 01 1 10 0 00 0 0 5 0 00 1 10 00 11
+16 16
+MC←MC+1 (NOP) MSA3 01 00 0 00 0 00 0 0 0 0 00 0 00 00 00
+R ←R[SA]+R MSA4 01 00 1 11 0 00 0 0 2 0 00 0 00 10 00
+17 16
+MC←MC+1 (NOP) MSA5 01 00 0 00 0 00 0 0 0 0 00 0 00 00 00
+if (R 16≠0) MC←MSA2 MSA6 11 MSA2 0 00 0 00 0 0 0 0 00 0 10 00 00
+else MC←MC+1
+R ←M[R ]+R MSA7 01 00 1 12 1 00 0 0 0 0 00 0 11 12 00
+18 17 18
+R[DR]←R MSA8 01 00 1 01 0 00 0 0 0 0 00 0 11 00 00
+17
+MC←IDLE MSA9 00 IDLE 0 00 0 00 0 0 0 0 00 0 00 00 00
+4Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 12
+© 2008 Pearson Education, Inc.
+12-1.*
+Heads x (cylinders/Head) x (sectors/cylinder) x (1 cylinder/track) x (bytes/sector)
+a) 1 x 1023 x 63 x 512 = 32,224.5 Kbytes (K = 1024)
+b) 4 x 8191 x 63 x 512 = 1,032,066 Kbytes
+c) 16 x 16383 x 63 x 512 = 8,257,032 Kbytes
+12-5.*
+a) If each address line is used for a different CS input, there will be no way to address
+the four registers so 2 bits are needed to address the registers. Only 14 lines can be used
+for CS inputs permitting at most 14 I/O Interface Units to be supported.
+b) Since two bits must be used to address the four registers, there are 14 bits remaining and
+214 or 16,384 distinct I/O Interface Units can be supported.
+12-7.*
+A given address can be shared by two registers if one is write only and one is read only. If a register
+is both written to and read from the bus, then it needs its own address. An 8-bit address provides
+256 addresses. Suppose that the 50 % of registers requiring 1 address is X. Then the remaining 50
+% of the registers, also X can share addresses requiring only 0.5 addresses. So 1.5 X = 256 and X =
+170.67 registers for a total of 341.33 registers. To meet the original constraints exactly, the total
+number of registers must be divisible by 4, so 340 registers can be used, 170 of which are read/
+write, 85 of which are read only and 85 of which are write only. There is one more address available
+for either one read/write register or up to a pair with a read only register and a write only register.
+12-9.*
+(a) (b) Read Operation
+Data Bus Data bus From I/O
+Address Bus
+I/O Address bus
+CPU RD Strobe Device
+Read Strobe
+WR Strobe
+Write Strobe
+Write Operation
+Data bus FFrroomm CCPPUU
+Address bus
+Read Strobe
+Write Strobe
+12-11.*
+There are 7 edges in the NRZI waveform for the SYNC pattern that can be used for synchronization.
+1Problem Solutions – Chapter 12
+12-13.*
+Type Check Device Endpoint
+SYNC
+4 bits 4 bits Address Address CRC EOP
+8 bits
+1001 0110 0100111 0010
+(a) Output packet
+Type Check
+SYNC Data
+8 bits 4 bits 4 bits 010000101001111010100110 CRC EOP
+1100 0011
+(b) Data packet (Data0 type) (bits LSB first)
+Type Check
+SYNC
+4 bits 4 bits EOP
+8 bits
+0111 1000
+(c) Handshake packet (Stall type)
+12-16.*
+Device 0 Device 1 Device 2
+Description PI PO RF VAD PI PO RF VAD PI PO RF VAD
+Initially 0 0 0 - 0 0 0 - 0 0 1 -
+Before CPU acknowledges Device 2 0 0 1 - 0 0 0 - 0 0 1 -
+After CPU sends acknowledge 1 0 1 0 0 0 0 - 0 0 1 -
+12-18.*
+Replace the six leading 0’s with 000110.
+12-20.*
+This is Figure 13-17 with the Interrupt and Mask Registers increased to
+6 bits each, and the 4x2 Priority Encoder replaced by a 8x3 Priority
+Encoder. Additionally, VAD must accept a 3rd bit from the Priority
+Encoder.
+12-22.*
+When the CPU communicates with the DMA, the read and write lines are used as DMA
+inputs. When the DMA communicates with the Memory, these lines are used as
+outputs from the DMA.
+2Solutions to Problems Marked with a * in
+Logic and Computer Design Fundamentals, 4th Edition
+Chapter 13
+© 2008 Pearson Education, Inc.
+13-3.*
+Since the lines are 32 bytes, 5 bits are used to address bytes in the lines.
+Since there are 1K bytes, there are 1024/32 = 25 cache lines.
+a) Index = 5 Bits,
+b) Tag = 32 – 5 – 5 = 22 Bits
+c) 32 × (32 × 8 + 22 + 1) = 8928 bits
+13-5.*
+a) See Instruction and Data Caches section on page 635 of the text.
+b) See Write Methods section on page 631 of the text.
+13-7. *
+000000 00 00 (i0) 000001 00 00 (i4) 000001 10 00 (i6) 000010 10 00 (i10)
+000000 01 00 (i1) 000011 00 00 (d) 00001 11 00 (i7) 000011 10 00 (d)
+000000 10 00 (i2) 000001 01 00 (i5) 000010 00 00 (i8) 000010 11 00 (i11)
+000000 11 00 (i3) 000011 01 00 (d) 000010 01 00 (i9) 000011 11 00 (d)
+Addresses of instructions (i) and Data (d) in sequence down and then to the right with the instructions in a loop with
+instruction i0 following i11. For the split cache, the hit - miss pattern for instructions is (assuming the cache initially
+empty and LRU replacement) M, M, M, M, M, M, M, M, M, M, M, M, M, ... since there are only eight locations
+available for instructions. For the unified cache, the hit-miss pattern for instructions with the same assumptions is M,
+M, M, M, M, M, M, M, M, M, M, M, H, H, H, ... since there are 12 locations indexed appropriately for instructions
+and four indexed appropriately for data.
+13-10.*
+a) Effective Access Time = 0.91 * 4ns + 0.09 * 40 ns = 7.24 ns
+b) Effective Access Time = 0.82 * 4ns + 0.18* 40 ns = 10.48 ns
+c) Effective Access Time = 0.96 * 4ns + 0.04 * 40 ns = 5.44 ns
+13-13.*
+a) Each page table handles 512 pages assuming 64-bit words. There
+are 4263 pages which requires 4263/512 8.33 page tables. So 9 page
+tables are needed.
+b) 9 directory entries are needed, requiring 1 directory page.
+c) 4263 - 8*512 = 167 entries in the last page table.
+13-17.*
+In section 14-3, it is mentioned that write-through in caches can slow down processing, but this can be
+avoided by using write buffering. When virtual memory does a write to the secondary device, the amount of
+data being written is typically very large and the device very slow. These two factors generally make it
+impossible to do write-through with virtual memory. Either the slow down is prohibitively large, or the buff-
+ering cost is just too high.
+1
